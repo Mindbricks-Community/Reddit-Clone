@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #eaeaea;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .download:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <script>
+    async function logout() {
+      try {
+        const response = await fetch("/logout", {
+          method: "POST",
+          credentials: "include", // to send cookies if necessary
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          window.location.href = "/login"; // redirect to login or home
+        } else {
+          alert("Logout failed");
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1>Welcome to redditclone-adminOps Service</h1>
+      <p>
+        Provides platform-level administrative interfaces for user and content
+        management, user suspension/ban, audit logging, GDPR compliance, and
+        policy management.
+      </p>
+      <h2>Available Routes</h2>
+      <ul>
+        <li>
+          <strong>getAdminUserAction</strong> => GET
+          /adminuseractions/:adminUserActionId
+        </li>
+
+        <li>
+          <strong>createAdminUserAction</strong> => POST /adminuseractions
+        </li>
+
+        <li>
+          <strong>updateAdminUserAction</strong> => PATCH
+          /adminuseractions/:adminUserActionId
+        </li>
+
+        <li>
+          <strong>deleteAdminUserAction</strong> => DELETE
+          /adminuseractions/:adminUserActionId
+        </li>
+
+        <li><strong>listAdminUserActions</strong> => GET /adminuseractions</li>
+
+        <li>
+          <strong>getGdprExportRequest</strong> => GET
+          /gdprexportrequests/:gdprExportRequestId
+        </li>
+
+        <li>
+          <strong>createGdprExportRequest</strong> => POST /gdprexportrequests
+        </li>
+
+        <li>
+          <strong>updateGdprExportRequest</strong> => PATCH
+          /gdprexportrequests/:gdprExportRequestId
+        </li>
+
+        <li>
+          <strong>deleteGdprExportRequest</strong> => DELETE
+          /gdprexportrequests/:gdprExportRequestId
+        </li>
+
+        <li>
+          <strong>listGdprExportRequests</strong> => GET /gdprexportrequests
+        </li>
+
+        <li>
+          <strong>getGdprDeleteRequest</strong> => GET
+          /gdprdeleterequests/:gdprDeleteRequestId
+        </li>
+
+        <li>
+          <strong>createGdprDeleteRequest</strong> => POST /gdprdeleterequests
+        </li>
+
+        <li>
+          <strong>updateGdprDeleteRequest</strong> => PATCH
+          /gdprdeleterequests/:gdprDeleteRequestId
+        </li>
+
+        <li>
+          <strong>deleteGdprDeleteRequest</strong> => DELETE
+          /gdprdeleterequests/:gdprDeleteRequestId
+        </li>
+
+        <li>
+          <strong>listGdprDeleteRequests</strong> => GET /gdprdeleterequests
+        </li>
+
+        <li>
+          <strong>getCompliancePolicy</strong> => GET
+          /compliancepolicies/:compliancePolicyId
+        </li>
+
+        <li>
+          <strong>createCompliancePolicy</strong> => POST /compliancepolicies
+        </li>
+
+        <li>
+          <strong>updateCompliancePolicy</strong> => PATCH
+          /compliancepolicies/:compliancePolicyId
+        </li>
+
+        <li>
+          <strong>deleteCompliancePolicy</strong> => DELETE
+          /compliancepolicies/:compliancePolicyId
+        </li>
+
+        <li>
+          <strong>listCompliancePolicies</strong> => GET /compliancepolicies
+        </li>
+
+        <li>
+          <strong>getGlobalUserRestriction</strong> => GET
+          /globaluserrestrictions/:globalUserRestrictionId
+        </li>
+
+        <li>
+          <strong>createGlobalUserRestriction</strong> => POST
+          /globaluserrestrictions
+        </li>
+
+        <li>
+          <strong>updateGlobalUserRestriction</strong> => PATCH
+          /globaluserrestrictions/:globalUserRestrictionId
+        </li>
+
+        <li>
+          <strong>deleteGlobalUserRestriction</strong> => DELETE
+          /globaluserrestrictions/:globalUserRestrictionId
+        </li>
+
+        <li>
+          <strong>listGlobalUserRestrictions</strong> => GET
+          /globaluserrestrictions
+        </li>
+      </ul>
+      <a class="download" href="/swagger">Go to Swagger Page</a>
+      <br />
+      <a class="download" href="/getPostmanCollection" download
+        >Download Postman Collection</a
+      >
+      $loginInfo
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+
+syntax = "proto3";
+
+package media;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message mediaObject {
+    string id = 1;
+    string ownerUserId = 2;
+    int32 mediaType = 3;
+    string originalUrl = 4;
+    string optimizedUrl = 5;
+    string previewUrl = 6;
+    string filename = 7;
+    int32 fileSize = 8;
+    int32 status = 9;
+    float nsfwScore = 10;
+    int32 malwareStatus = 11;
+}
+message mediaScan {
+    string id = 1;
+    string mediaObjectId = 2;
+    int32 scanType = 3;
+    google.protobuf.Struct result = 4;
+    int32 scanStatus = 5;
+}
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service mediaService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

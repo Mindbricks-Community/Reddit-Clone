@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #eaeaea;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .download:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <script>
+    async function logout() {
+      try {
+        const response = await fetch("/logout", {
+          method: "POST",
+          credentials: "include", // to send cookies if necessary
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          window.location.href = "/login"; // redirect to login or home
+        } else {
+          alert("Logout failed");
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1>Welcome to redditclone-localization Service</h1>
+      <p>
+        Handles management of localization keys, strings, and frameworks for
+        internationalization readiness. Provides scaffolding and administrative
+        interfaces for future language support and expansion.
+      </p>
+      <h2>Available Routes</h2>
+      <ul>
+        <li><strong>getLocale</strong> => GET /locales/:localeId</li>
+
+        <li><strong>createLocale</strong> => POST /locales</li>
+
+        <li><strong>updateLocale</strong> => PATCH /locales/:localeId</li>
+
+        <li><strong>deleteLocale</strong> => DELETE /locales/:localeId</li>
+
+        <li><strong>listLocales</strong> => GET /locales</li>
+
+        <li>
+          <strong>getLocalizationKey</strong> => GET
+          /localizationkeys/:localizationKeyId
+        </li>
+
+        <li>
+          <strong>createLocalizationKey</strong> => POST /localizationkeys
+        </li>
+
+        <li>
+          <strong>updateLocalizationKey</strong> => PATCH
+          /localizationkeys/:localizationKeyId
+        </li>
+
+        <li>
+          <strong>deleteLocalizationKey</strong> => DELETE
+          /localizationkeys/:localizationKeyId
+        </li>
+
+        <li><strong>listLocalizationKeys</strong> => GET /localizationkeys</li>
+
+        <li>
+          <strong>getLocalizationString</strong> => GET
+          /localizationstrings/:localizationStringId
+        </li>
+
+        <li>
+          <strong>createLocalizationString</strong> => POST /localizationstrings
+        </li>
+
+        <li>
+          <strong>updateLocalizationString</strong> => PATCH
+          /localizationstrings/:localizationStringId
+        </li>
+
+        <li>
+          <strong>deleteLocalizationString</strong> => DELETE
+          /localizationstrings/:localizationStringId
+        </li>
+
+        <li>
+          <strong>listLocalizationStrings</strong> => GET /localizationstrings
+        </li>
+      </ul>
+      <a class="download" href="/swagger">Go to Swagger Page</a>
+      <br />
+      <a class="download" href="/getPostmanCollection" download
+        >Download Postman Collection</a
+      >
+      $loginInfo
+    </div>
+  </body>
+</html>

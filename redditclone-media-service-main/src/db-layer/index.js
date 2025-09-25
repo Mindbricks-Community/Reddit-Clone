@@ -1,0 +1,41 @@
+const mainFunctions = require("./main");
+
+module.exports = {
+  // main Database
+  // MediaObject Db Object
+  dbGetMediaobject: mainFunctions.dbGetMediaobject,
+  dbCreateMediaobject: mainFunctions.dbCreateMediaobject,
+  dbUpdateMediaobject: mainFunctions.dbUpdateMediaobject,
+  dbDeleteMediaobject: mainFunctions.dbDeleteMediaobject,
+  dbListMediaobjects: mainFunctions.dbListMediaobjects,
+  createMediaObject: mainFunctions.createMediaObject,
+  getIdListOfMediaObjectByField: mainFunctions.getIdListOfMediaObjectByField,
+  getMediaObjectById: mainFunctions.getMediaObjectById,
+  getMediaObjectAggById: mainFunctions.getMediaObjectAggById,
+  getMediaObjectListByQuery: mainFunctions.getMediaObjectListByQuery,
+  getMediaObjectStatsByQuery: mainFunctions.getMediaObjectStatsByQuery,
+  getMediaObjectByQuery: mainFunctions.getMediaObjectByQuery,
+  updateMediaObjectById: mainFunctions.updateMediaObjectById,
+  updateMediaObjectByIdList: mainFunctions.updateMediaObjectByIdList,
+  updateMediaObjectByQuery: mainFunctions.updateMediaObjectByQuery,
+  deleteMediaObjectById: mainFunctions.deleteMediaObjectById,
+  deleteMediaObjectByQuery: mainFunctions.deleteMediaObjectByQuery,
+  // MediaScan Db Object
+  dbGetMediascan: mainFunctions.dbGetMediascan,
+  dbCreateMediascan: mainFunctions.dbCreateMediascan,
+  dbUpdateMediascan: mainFunctions.dbUpdateMediascan,
+  dbDeleteMediascan: mainFunctions.dbDeleteMediascan,
+  dbListMediascans: mainFunctions.dbListMediascans,
+  createMediaScan: mainFunctions.createMediaScan,
+  getIdListOfMediaScanByField: mainFunctions.getIdListOfMediaScanByField,
+  getMediaScanById: mainFunctions.getMediaScanById,
+  getMediaScanAggById: mainFunctions.getMediaScanAggById,
+  getMediaScanListByQuery: mainFunctions.getMediaScanListByQuery,
+  getMediaScanStatsByQuery: mainFunctions.getMediaScanStatsByQuery,
+  getMediaScanByQuery: mainFunctions.getMediaScanByQuery,
+  updateMediaScanById: mainFunctions.updateMediaScanById,
+  updateMediaScanByIdList: mainFunctions.updateMediaScanByIdList,
+  updateMediaScanByQuery: mainFunctions.updateMediaScanByQuery,
+  deleteMediaScanById: mainFunctions.deleteMediaScanById,
+  deleteMediaScanByQuery: mainFunctions.deleteMediaScanByQuery,
+};

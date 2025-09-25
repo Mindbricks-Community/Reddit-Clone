@@ -1,0 +1,15 @@
+module.exports = {
+  createCommunity: require("./createCommunity"),
+  getIdListOfCommunityByField: require("./getIdListOfCommunityByField"),
+  getCommunityById: require("./getCommunityById"),
+  getCommunityAggById: require("./getCommunityAggById"),
+  getCommunityListByQuery: require("./getCommunityListByQuery"),
+  getCommunityStatsByQuery: require("./getCommunityStatsByQuery"),
+  getCommunityByQuery: require("./getCommunityByQuery"),
+  updateCommunityById: require("./updateCommunityById"),
+  updateCommunityByIdList: require("./updateCommunityByIdList"),
+  updateCommunityByQuery: require("./updateCommunityByQuery"),
+  deleteCommunityById: require("./deleteCommunityById"),
+  deleteCommunityByQuery: require("./deleteCommunityByQuery"),
+  getCommunityBySlug: require("./getCommunityBySlug"),
+};

@@ -1,0 +1,84 @@
+
+syntax = "proto3";
+
+package content;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message post {
+    string id = 1;
+    string communityId = 2;
+    string userId = 3;
+    string title = 4;
+    string bodyText = 5;
+    string externalUrl = 6;
+    int32 postType = 7;
+    int32 status = 8;
+    bool isNsfw = 9;
+    int32 upVotes = 10;
+    int32 downVotes = 11;
+}
+message comment {
+    string id = 1;
+    string postId = 2;
+    string userId = 3;
+    string parentCommentId = 4;
+    string threadPath = 5;
+    string bodyText = 6;
+    int32 status = 7;
+    bool isNsfw = 8;
+    int32 upVotes = 9;
+    int32 downVotes = 10;
+}
+message vote {
+    string id = 1;
+    string userId = 2;
+    string postId = 3;
+    string commentId = 4;
+    int32 voteType = 5;
+}
+message pollOption {
+    string id = 1;
+    string postId = 2;
+    int32 optionIndex = 3;
+    string optionText = 4;
+    int32 voteCount = 5;
+}
+message postMedia {
+    string id = 1;
+    string mediaObjectId = 2;
+    string postId = 3;
+    string commentId = 4;
+    int32 mediaIndex = 5;
+    string caption = 6;
+}
+
+
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service contentService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

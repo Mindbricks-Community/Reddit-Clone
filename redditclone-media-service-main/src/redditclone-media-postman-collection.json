@@ -1,0 +1,320 @@
+{
+  "info": {
+    "name": "redditclone-media-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getMediaObject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//mediaobjects/:mediaObjectId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediaobjects",
+            ":mediaObjectId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createMediaObject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mediaType\": \"Enum\",\n  \"originalUrl\": \"String\",\n  \"optimizedUrl\": \"String\",\n  \"previewUrl\": \"String\",\n  \"filename\": \"String\",\n  \"fileSize\": \"Integer\",\n  \"status\": \"Enum\",\n  \"nsfwScore\": \"Float\",\n  \"malwareStatus\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//mediaobjects",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediaobjects"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateMediaObject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"optimizedUrl\": \"String\",\n  \"previewUrl\": \"String\",\n  \"status\": \"Enum\",\n  \"nsfwScore\": \"Float\",\n  \"malwareStatus\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//mediaobjects/:mediaObjectId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediaobjects",
+            ":mediaObjectId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteMediaObject",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//mediaobjects/:mediaObjectId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediaobjects",
+            ":mediaObjectId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listMediaObjects",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//mediaobjects",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediaobjects"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getMediaScan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//mediascans/:mediaScanId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediascans",
+            ":mediaScanId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createMediaScan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mediaObjectId\": \"ID\",\n  \"scanType\": \"Enum\",\n  \"result\": \"Object\",\n  \"scanStatus\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//mediascans",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediascans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateMediaScan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//mediascans/:mediaScanId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediascans",
+            ":mediaScanId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteMediaScan",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//mediascans/:mediaScanId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediascans",
+            ":mediaScanId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listMediaScans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//mediascans",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "mediascans"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

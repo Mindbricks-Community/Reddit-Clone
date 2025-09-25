@@ -1,0 +1,788 @@
+{
+  "info": {
+    "name": "redditclone-adminops-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getAdminUserAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//adminuseractions/:adminUserActionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "adminuseractions",
+            ":adminUserActionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAdminUserAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"adminId\": \"ID\",\n  \"targetType\": \"Enum\",\n  \"targetId\": \"ID\",\n  \"actionType\": \"Enum\",\n  \"reason\": \"String\",\n  \"notes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//adminuseractions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "adminuseractions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAdminUserAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reason\": \"String\",\n  \"notes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//adminuseractions/:adminUserActionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "adminuseractions",
+            ":adminUserActionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAdminUserAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//adminuseractions/:adminUserActionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "adminuseractions",
+            ":adminUserActionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listAdminUserActions",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//adminuseractions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "adminuseractions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getGdprExportRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//gdprexportrequests/:gdprExportRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprexportrequests",
+            ":gdprExportRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createGdprExportRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"ID\",\n  \"requestedByAdminId\": \"ID\",\n  \"status\": \"Enum\",\n  \"exportUrl\": \"String\",\n  \"errorMsg\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//gdprexportrequests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprexportrequests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateGdprExportRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Enum\",\n  \"exportUrl\": \"String\",\n  \"errorMsg\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//gdprexportrequests/:gdprExportRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprexportrequests",
+            ":gdprExportRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGdprExportRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//gdprexportrequests/:gdprExportRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprexportrequests",
+            ":gdprExportRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listGdprExportRequests",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//gdprexportrequests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprexportrequests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getGdprDeleteRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//gdprdeleterequests/:gdprDeleteRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprdeleterequests",
+            ":gdprDeleteRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createGdprDeleteRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"ID\",\n  \"requestedByAdminId\": \"ID\",\n  \"status\": \"Enum\",\n  \"errorMsg\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//gdprdeleterequests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprdeleterequests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateGdprDeleteRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Enum\",\n  \"errorMsg\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//gdprdeleterequests/:gdprDeleteRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprdeleterequests",
+            ":gdprDeleteRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGdprDeleteRequest",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//gdprdeleterequests/:gdprDeleteRequestId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprdeleterequests",
+            ":gdprDeleteRequestId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listGdprDeleteRequests",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//gdprdeleterequests",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "gdprdeleterequests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCompliancePolicy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//compliancepolicies/:compliancePolicyId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "compliancepolicies",
+            ":compliancePolicyId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCompliancePolicy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"minAge\": \"Integer\",\n  \"gdprExportEnabled\": \"Boolean\",\n  \"gdprDeleteEnabled\": \"Boolean\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//compliancepolicies",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "compliancepolicies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCompliancePolicy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"minAge\": \"Integer\",\n  \"gdprExportEnabled\": \"Boolean\",\n  \"gdprDeleteEnabled\": \"Boolean\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//compliancepolicies/:compliancePolicyId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "compliancepolicies",
+            ":compliancePolicyId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCompliancePolicy",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//compliancepolicies/:compliancePolicyId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "compliancepolicies",
+            ":compliancePolicyId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listCompliancePolicies",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//compliancepolicies",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "compliancepolicies"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getGlobalUserRestriction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//globaluserrestrictions/:globalUserRestrictionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "globaluserrestrictions",
+            ":globalUserRestrictionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createGlobalUserRestriction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"ID\",\n  \"restrictionType\": \"Enum\",\n  \"status\": \"Enum\",\n  \"startDate\": \"Date\",\n  \"endDate\": \"Date\",\n  \"reason\": \"String\",\n  \"adminId\": \"ID\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//globaluserrestrictions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "globaluserrestrictions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateGlobalUserRestriction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"restrictionType\": \"Enum\",\n  \"status\": \"Enum\",\n  \"startDate\": \"Date\",\n  \"endDate\": \"Date\",\n  \"reason\": \"String\",\n  \"adminId\": \"ID\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//globaluserrestrictions/:globalUserRestrictionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "globaluserrestrictions",
+            ":globalUserRestrictionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGlobalUserRestriction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//globaluserrestrictions/:globalUserRestrictionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "globaluserrestrictions",
+            ":globalUserRestrictionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listGlobalUserRestrictions",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//globaluserrestrictions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "globaluserrestrictions"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+const AutomodEventManager = require("./AutomodEventManager");
+const { isValidObjectId, isValidUUID, PaymentGateError } = require("common");
+const { hexaLogger } = require("common");
+const { ElasticIndexer } = require("serviceCommon");
+
+const {
+  HttpServerError,
+  BadRequestError,
+  NotAuthenticatedError,
+  ForbiddenError,
+  NotFoundError,
+} = require("common");
+const { dbUpdateAutomodevent } = require("dbLayer");
+
+class UpdateAutomodEventManager extends AutomodEventManager {
+  constructor(request, controllerType) {
+    super(request, {
+      name: "updateAutomodEvent",
+      controllerType: controllerType,
+      pagination: false,
+      crudType: "update",
+      loginRequired: true,
+      hasShareToken: false,
+    });
+
+    this.dataName = "automodEvent";
+  }
+
+  parametersToJson(jsonObj) {
+    super.parametersToJson(jsonObj);
+    jsonObj.automodEventId = this.automodEventId;
+    jsonObj.triggerDetails = this.triggerDetails;
+  }
+
+  readRestParameters(request) {
+    this.automodEventId = request.params?.automodEventId;
+    this.triggerDetails = request.body?.triggerDetails;
+    this.requestData = request.body;
+    this.queryData = request.query ?? {};
+    const url = request.url;
+    this.urlPath = url.slice(1).split("/").join(".");
+  }
+
+  readMcpParameters(request) {
+    this.automodEventId = request.mcpParams.automodEventId;
+    this.triggerDetails = request.mcpParams.triggerDetails;
+    this.requestData = request.mcpParams;
+  }
+
+  async transformParameters() {}
+
+  async setVariables() {}
+
+  async fetchInstance() {
+    const { getAutomodEventById } = require("dbLayer");
+    this.automodEvent = await getAutomodEventById(this.automodEventId);
+    if (!this.automodEvent) {
+      throw new NotFoundError("errMsg_RecordNotFound");
+    }
+  }
+
+  checkParameters() {
+    if (this.automodEventId == null) {
+      throw new BadRequestError("errMsg_automodEventIdisRequired");
+    }
+
+    // ID
+    if (
+      this.automodEventId &&
+      !isValidObjectId(this.automodEventId) &&
+      !isValidUUID(this.automodEventId)
+    ) {
+      throw new BadRequestError("errMsg_automodEventIdisNotAValidID");
+    }
+  }
+
+  setOwnership() {
+    this.isOwner = false;
+    if (!this.session || !this.session.userId) return;
+
+    this.isOwner = this.automodEvent?._owner === this.session.userId;
+  }
+
+  async doBusiness() {
+    // Call DbFunction
+    // make an awaited call to the dbUpdateAutomodevent function to update the automodevent and return the result to the controller
+    const automodevent = await dbUpdateAutomodevent(this);
+
+    return automodevent;
+  }
+
+  async getRouteQuery() {
+    return { $and: [{ id: this.automodEventId }, { isActive: true }] };
+
+    // handle permission filter later
+  }
+
+  async getWhereClause() {
+    const { convertUserQueryToSequelizeQuery } = require("common");
+
+    const routeQuery = await this.getRouteQuery();
+
+    return convertUserQueryToSequelizeQuery(routeQuery);
+  }
+
+  async getDataClause() {
+    const { hashString } = require("common");
+
+    const dataClause = {
+      triggerDetails: this.triggerDetails
+        ? typeof this.triggerDetails == "string"
+          ? JSON.parse(this.triggerDetails)
+          : this.triggerDetails
+        : null,
+    };
+
+    return dataClause;
+  }
+}
+
+module.exports = UpdateAutomodEventManager;

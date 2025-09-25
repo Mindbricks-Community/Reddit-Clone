@@ -1,0 +1,788 @@
+{
+  "info": {
+    "name": "redditclone-community-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getCommunity",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communities/:communityId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communities",
+            ":communityId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCommunity",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"String\",\n  \"slug\": \"String\",\n  \"description\": \"Text\",\n  \"bannerUrl\": \"String\",\n  \"avatarUrl\": \"String\",\n  \"colorScheme\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communities",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCommunity",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"String\",\n  \"description\": \"Text\",\n  \"bannerUrl\": \"String\",\n  \"avatarUrl\": \"String\",\n  \"colorScheme\": \"String\",\n  \"privacyLevel\": \"Enum\",\n  \"isNsfw\": \"Boolean\",\n  \"allowedPostTypes\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communities/:communityId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communities",
+            ":communityId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCommunity",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communities/:communityId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communities",
+            ":communityId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listCommunities",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communities",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communities"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCommunityMember",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communitymembers/:communityMemberId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitymembers",
+            ":communityMemberId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCommunityMember",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communitymembers",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitymembers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCommunityMember",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"role\": \"Enum\",\n  \"status\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communitymembers/:communityMemberId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitymembers",
+            ":communityMemberId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCommunityMember",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communitymembers/:communityMemberId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitymembers",
+            ":communityMemberId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listCommunityMembers",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communitymembers",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitymembers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCommunityRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communityrules/:communityRuleId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityrules",
+            ":communityRuleId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCommunityRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"shortName\": \"String\",\n  \"description\": \"Text\",\n  \"orderIndex\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communityrules",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityrules"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCommunityRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"shortName\": \"String\",\n  \"description\": \"Text\",\n  \"orderIndex\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communityrules/:communityRuleId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityrules",
+            ":communityRuleId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCommunityRule",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communityrules/:communityRuleId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityrules",
+            ":communityRuleId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listCommunityRules",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communityrules",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityrules"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCommunityPinned",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communitypinneds/:communityPinnedId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitypinneds",
+            ":communityPinnedId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCommunityPinned",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"orderIndex\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communitypinneds",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitypinneds"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCommunityPinned",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"targetType\": \"Enum\",\n  \"orderIndex\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communitypinneds/:communityPinnedId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitypinneds",
+            ":communityPinnedId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCommunityPinned",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communitypinneds/:communityPinnedId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitypinneds",
+            ":communityPinnedId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listCommunityPinned",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communitypinned",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communitypinned"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCommunityAutomodSetting",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communityautomodsettings/:communityAutomodSettingId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityautomodsettings",
+            ":communityAutomodSettingId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCommunityAutomodSetting",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rulesData\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communityautomodsettings",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityautomodsettings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCommunityAutomodSetting",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rulesData\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//communityautomodsettings/:communityAutomodSettingId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityautomodsettings",
+            ":communityAutomodSettingId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteCommunityAutomodSetting",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communityautomodsettings/:communityAutomodSettingId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityautomodsettings",
+            ":communityAutomodSettingId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listCommunityAutomodSettings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//communityautomodsettings",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "communityautomodsettings"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

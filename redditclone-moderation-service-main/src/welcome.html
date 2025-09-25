@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #eaeaea;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .download:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <script>
+    async function logout() {
+      try {
+        const response = await fetch("/logout", {
+          method: "POST",
+          credentials: "include", // to send cookies if necessary
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          window.location.href = "/login"; // redirect to login or home
+        } else {
+          alert("Logout failed");
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1>Welcome to redditclone-moderation Service</h1>
+      <p>
+        Implements manual and automated moderation tools, including actions
+        (approve/remove/lock/warn/ban), automod events processing, moderate
+        report workflow, moderator audit logging, and modmail messaging for the
+        platform. Integrates deeply with core community/content services for
+        moderation control and transparency.
+      </p>
+      <h2>Available Routes</h2>
+      <ul>
+        <li>
+          <strong>getModerationAction</strong> => GET
+          /moderationactions/:moderationActionId
+        </li>
+
+        <li>
+          <strong>createModerationAction</strong> => POST /moderationactions
+        </li>
+
+        <li>
+          <strong>updateModerationAction</strong> => PATCH
+          /moderationactions/:moderationActionId
+        </li>
+
+        <li>
+          <strong>deleteModerationAction</strong> => DELETE
+          /moderationactions/:moderationActionId
+        </li>
+
+        <li>
+          <strong>listModerationActions</strong> => GET /moderationactions
+        </li>
+
+        <li>
+          <strong>getAutomodEvent</strong> => GET /automodevents/:automodEventId
+        </li>
+
+        <li><strong>createAutomodEvent</strong> => POST /automodevents</li>
+
+        <li>
+          <strong>updateAutomodEvent</strong> => PATCH
+          /automodevents/:automodEventId
+        </li>
+
+        <li>
+          <strong>deleteAutomodEvent</strong> => DELETE
+          /automodevents/:automodEventId
+        </li>
+
+        <li><strong>listAutomodEvents</strong> => GET /automodevents</li>
+
+        <li>
+          <strong>getModerationAuditLog</strong> => GET
+          /moderationauditlogs/:moderationAuditLogId
+        </li>
+
+        <li>
+          <strong>createModerationAuditLog</strong> => POST /moderationauditlogs
+        </li>
+
+        <li>
+          <strong>updateModerationAuditLog</strong> => PATCH
+          /moderationauditlogs/:moderationAuditLogId
+        </li>
+
+        <li>
+          <strong>deleteModerationAuditLog</strong> => DELETE
+          /moderationauditlogs/:moderationAuditLogId
+        </li>
+
+        <li>
+          <strong>listModerationAuditLogs</strong> => GET /moderationauditlogs
+        </li>
+
+        <li>
+          <strong>getModmailThread</strong> => GET
+          /modmailthreads/:modmailThreadId
+        </li>
+
+        <li><strong>createModmailThread</strong> => POST /modmailthreads</li>
+
+        <li>
+          <strong>updateModmailThread</strong> => PATCH
+          /modmailthreads/:modmailThreadId
+        </li>
+
+        <li>
+          <strong>deleteModmailThread</strong> => DELETE
+          /modmailthreads/:modmailThreadId
+        </li>
+
+        <li><strong>listModmailThreads</strong> => GET /modmailthreads</li>
+
+        <li>
+          <strong>getModmailMessage</strong> => GET
+          /modmailmessages/:modmailMessageId
+        </li>
+
+        <li><strong>createModmailMessage</strong> => POST /modmailmessages</li>
+
+        <li>
+          <strong>updateModmailMessage</strong> => PATCH
+          /modmailmessages/:modmailMessageId
+        </li>
+
+        <li>
+          <strong>deleteModmailMessage</strong> => DELETE
+          /modmailmessages/:modmailMessageId
+        </li>
+
+        <li><strong>listModmailMessages</strong> => GET /modmailmessages</li>
+      </ul>
+      <a class="download" href="/swagger">Go to Swagger Page</a>
+      <br />
+      <a class="download" href="/getPostmanCollection" download
+        >Download Postman Collection</a
+      >
+      $loginInfo
+    </div>
+  </body>
+</html>

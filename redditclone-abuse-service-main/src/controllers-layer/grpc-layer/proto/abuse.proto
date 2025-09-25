@@ -1,0 +1,79 @@
+
+syntax = "proto3";
+
+package abuse;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message abuseReport {
+    string id = 1;
+    int32 reportType = 2;
+    int32 reportStatus = 3;
+    string reasonText = 4;
+    string reporterUserId = 5;
+    string reportedUserId = 6;
+    string postId = 7;
+    string commentId = 8;
+    int32 origin = 9;
+    int32 resolutionResult = 10;
+    string resolvedByUserId = 11;
+    google.protobuf.Struct extraData = 12;
+}
+message abuseFlag {
+    string id = 1;
+    int32 flagType = 2;
+    int32 flagStatus = 3;
+    string postId = 4;
+    string commentId = 5;
+    string userId = 6;
+    string mediaObjectId = 7;
+    int32 origin = 8;
+    google.protobuf.Struct details = 9;
+}
+message abuseHeuristicTrigger {
+    string id = 1;
+    int32 triggerType = 2;
+    string userId = 3;
+    string ipAddress = 4;
+    string targetId = 5;
+    google.protobuf.Struct details = 6;
+}
+message abuseInvestigation {
+    string id = 1;
+    int32 investigationStatus = 2;
+    string title = 3;
+    string openedByUserId = 4;
+    repeated string assignedToUserIds = 5;
+    repeated string relatedReportIds = 6;
+    repeated string relatedFlagIds = 7;
+    google.protobuf.Struct details = 8;
+}
+
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service abuseService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

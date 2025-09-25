@@ -1,0 +1,632 @@
+{
+  "info": {
+    "name": "redditclone-abuse-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getAbuseReport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abusereports/:abuseReportId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abusereports",
+            ":abuseReportId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAbuseReport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reportType\": \"Enum\",\n  \"reportStatus\": \"Enum\",\n  \"reasonText\": \"Text\",\n  \"reportedUserId\": \"ID\",\n  \"postId\": \"ID\",\n  \"commentId\": \"ID\",\n  \"origin\": \"Enum\",\n  \"resolutionResult\": \"Enum\",\n  \"resolvedByUserId\": \"ID\",\n  \"extraData\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abusereports",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abusereports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAbuseReport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reportStatus\": \"Enum\",\n  \"reasonText\": \"Text\",\n  \"resolutionResult\": \"Enum\",\n  \"resolvedByUserId\": \"ID\",\n  \"extraData\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abusereports/:abuseReportId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abusereports",
+            ":abuseReportId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAbuseReport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abusereports/:abuseReportId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abusereports",
+            ":abuseReportId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listAbuseReports",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abusereports",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abusereports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAbuseFlag",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseflags/:abuseFlagId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseflags",
+            ":abuseFlagId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAbuseFlag",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"flagType\": \"Enum\",\n  \"flagStatus\": \"Enum\",\n  \"postId\": \"ID\",\n  \"commentId\": \"ID\",\n  \"userId\": \"ID\",\n  \"mediaObjectId\": \"ID\",\n  \"origin\": \"Enum\",\n  \"details\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abuseflags",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseflags"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAbuseFlag",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"flagStatus\": \"Enum\",\n  \"details\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abuseflags/:abuseFlagId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseflags",
+            ":abuseFlagId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAbuseFlag",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseflags/:abuseFlagId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseflags",
+            ":abuseFlagId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listAbuseFlags",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseflags",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseflags"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAbuseHeuristicTrigger",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseheuristictriggers/:abuseHeuristicTriggerId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseheuristictriggers",
+            ":abuseHeuristicTriggerId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAbuseHeuristicTrigger",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"triggerType\": \"Enum\",\n  \"userId\": \"ID\",\n  \"ipAddress\": \"String\",\n  \"targetId\": \"ID\",\n  \"details\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abuseheuristictriggers",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseheuristictriggers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAbuseHeuristicTrigger",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"details\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abuseheuristictriggers/:abuseHeuristicTriggerId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseheuristictriggers",
+            ":abuseHeuristicTriggerId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAbuseHeuristicTrigger",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseheuristictriggers/:abuseHeuristicTriggerId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseheuristictriggers",
+            ":abuseHeuristicTriggerId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listAbuseHeuristicTriggers",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseheuristictriggers",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseheuristictriggers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAbuseInvestigation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseinvestigations/:abuseInvestigationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseinvestigations",
+            ":abuseInvestigationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAbuseInvestigation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"investigationStatus\": \"Enum\",\n  \"title\": \"String\",\n  \"openedByUserId\": \"ID\",\n  \"assignedToUserIds\": \"ID\",\n  \"relatedReportIds\": \"ID\",\n  \"relatedFlagIds\": \"ID\",\n  \"details\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abuseinvestigations",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseinvestigations"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAbuseInvestigation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"investigationStatus\": \"Enum\",\n  \"title\": \"String\",\n  \"assignedToUserIds\": \"ID\",\n  \"relatedReportIds\": \"ID\",\n  \"relatedFlagIds\": \"ID\",\n  \"details\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//abuseinvestigations/:abuseInvestigationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseinvestigations",
+            ":abuseInvestigationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAbuseInvestigation",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseinvestigations/:abuseInvestigationId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseinvestigations",
+            ":abuseInvestigationId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listAbuseInvestigations",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//abuseinvestigations",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "abuseinvestigations"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

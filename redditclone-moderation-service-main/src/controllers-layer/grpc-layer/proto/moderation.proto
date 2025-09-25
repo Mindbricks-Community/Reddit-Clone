@@ -1,0 +1,81 @@
+
+syntax = "proto3";
+
+package moderation;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message moderationAction {
+    string id = 1;
+    string communityId = 2;
+    int32 targetType = 3;
+    string targetId = 4;
+    int32 actionType = 5;
+    string performedByUserId = 6;
+    int32 performedByRole = 7;
+    string reason = 8;
+    string notes = 9;
+}
+message automodEvent {
+    string id = 1;
+    string communityId = 2;
+    int32 targetType = 3;
+    string targetId = 4;
+    int32 automodType = 5;
+    string ruleId = 6;
+    bool performedByAutomod = 7;
+    google.protobuf.Struct triggerDetails = 8;
+}
+message moderationAuditLog {
+    string id = 1;
+    int32 logEntryType = 2;
+    string communityId = 3;
+    int32 entityType = 4;
+    string entityId = 5;
+    string actionUserId = 6;
+    string linkedModerationActionId = 7;
+}
+message modmailThread {
+    string id = 1;
+    string communityId = 2;
+    string subject = 3;
+    string createdByUserId = 4;
+    int32 status = 5;
+}
+message modmailMessage {
+    string id = 1;
+    string threadId = 2;
+    string senderUserId = 3;
+    string messageBody = 4;
+    int32 messageType = 5;
+}
+
+
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service moderationService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

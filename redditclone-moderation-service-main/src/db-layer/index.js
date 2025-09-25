@@ -1,0 +1,105 @@
+const mainFunctions = require("./main");
+
+module.exports = {
+  // main Database
+  // ModerationAction Db Object
+  dbGetModerationaction: mainFunctions.dbGetModerationaction,
+  dbCreateModerationaction: mainFunctions.dbCreateModerationaction,
+  dbUpdateModerationaction: mainFunctions.dbUpdateModerationaction,
+  dbDeleteModerationaction: mainFunctions.dbDeleteModerationaction,
+  dbListModerationactions: mainFunctions.dbListModerationactions,
+  createModerationAction: mainFunctions.createModerationAction,
+  getIdListOfModerationActionByField:
+    mainFunctions.getIdListOfModerationActionByField,
+  getModerationActionById: mainFunctions.getModerationActionById,
+  getModerationActionAggById: mainFunctions.getModerationActionAggById,
+  getModerationActionListByQuery: mainFunctions.getModerationActionListByQuery,
+  getModerationActionStatsByQuery:
+    mainFunctions.getModerationActionStatsByQuery,
+  getModerationActionByQuery: mainFunctions.getModerationActionByQuery,
+  updateModerationActionById: mainFunctions.updateModerationActionById,
+  updateModerationActionByIdList: mainFunctions.updateModerationActionByIdList,
+  updateModerationActionByQuery: mainFunctions.updateModerationActionByQuery,
+  deleteModerationActionById: mainFunctions.deleteModerationActionById,
+  deleteModerationActionByQuery: mainFunctions.deleteModerationActionByQuery,
+  // AutomodEvent Db Object
+  dbGetAutomodevent: mainFunctions.dbGetAutomodevent,
+  dbCreateAutomodevent: mainFunctions.dbCreateAutomodevent,
+  dbUpdateAutomodevent: mainFunctions.dbUpdateAutomodevent,
+  dbDeleteAutomodevent: mainFunctions.dbDeleteAutomodevent,
+  dbListAutomodevents: mainFunctions.dbListAutomodevents,
+  createAutomodEvent: mainFunctions.createAutomodEvent,
+  getIdListOfAutomodEventByField: mainFunctions.getIdListOfAutomodEventByField,
+  getAutomodEventById: mainFunctions.getAutomodEventById,
+  getAutomodEventAggById: mainFunctions.getAutomodEventAggById,
+  getAutomodEventListByQuery: mainFunctions.getAutomodEventListByQuery,
+  getAutomodEventStatsByQuery: mainFunctions.getAutomodEventStatsByQuery,
+  getAutomodEventByQuery: mainFunctions.getAutomodEventByQuery,
+  updateAutomodEventById: mainFunctions.updateAutomodEventById,
+  updateAutomodEventByIdList: mainFunctions.updateAutomodEventByIdList,
+  updateAutomodEventByQuery: mainFunctions.updateAutomodEventByQuery,
+  deleteAutomodEventById: mainFunctions.deleteAutomodEventById,
+  deleteAutomodEventByQuery: mainFunctions.deleteAutomodEventByQuery,
+  // ModerationAuditLog Db Object
+  dbGetModerationauditlog: mainFunctions.dbGetModerationauditlog,
+  dbCreateModerationauditlog: mainFunctions.dbCreateModerationauditlog,
+  dbUpdateModerationauditlog: mainFunctions.dbUpdateModerationauditlog,
+  dbDeleteModerationauditlog: mainFunctions.dbDeleteModerationauditlog,
+  dbListModerationauditlogs: mainFunctions.dbListModerationauditlogs,
+  createModerationAuditLog: mainFunctions.createModerationAuditLog,
+  getIdListOfModerationAuditLogByField:
+    mainFunctions.getIdListOfModerationAuditLogByField,
+  getModerationAuditLogById: mainFunctions.getModerationAuditLogById,
+  getModerationAuditLogAggById: mainFunctions.getModerationAuditLogAggById,
+  getModerationAuditLogListByQuery:
+    mainFunctions.getModerationAuditLogListByQuery,
+  getModerationAuditLogStatsByQuery:
+    mainFunctions.getModerationAuditLogStatsByQuery,
+  getModerationAuditLogByQuery: mainFunctions.getModerationAuditLogByQuery,
+  updateModerationAuditLogById: mainFunctions.updateModerationAuditLogById,
+  updateModerationAuditLogByIdList:
+    mainFunctions.updateModerationAuditLogByIdList,
+  updateModerationAuditLogByQuery:
+    mainFunctions.updateModerationAuditLogByQuery,
+  deleteModerationAuditLogById: mainFunctions.deleteModerationAuditLogById,
+  deleteModerationAuditLogByQuery:
+    mainFunctions.deleteModerationAuditLogByQuery,
+  // ModmailThread Db Object
+  dbGetModmailthread: mainFunctions.dbGetModmailthread,
+  dbCreateModmailthread: mainFunctions.dbCreateModmailthread,
+  dbUpdateModmailthread: mainFunctions.dbUpdateModmailthread,
+  dbDeleteModmailthread: mainFunctions.dbDeleteModmailthread,
+  dbListModmailthreads: mainFunctions.dbListModmailthreads,
+  createModmailThread: mainFunctions.createModmailThread,
+  getIdListOfModmailThreadByField:
+    mainFunctions.getIdListOfModmailThreadByField,
+  getModmailThreadById: mainFunctions.getModmailThreadById,
+  getModmailThreadAggById: mainFunctions.getModmailThreadAggById,
+  getModmailThreadListByQuery: mainFunctions.getModmailThreadListByQuery,
+  getModmailThreadStatsByQuery: mainFunctions.getModmailThreadStatsByQuery,
+  getModmailThreadByQuery: mainFunctions.getModmailThreadByQuery,
+  updateModmailThreadById: mainFunctions.updateModmailThreadById,
+  updateModmailThreadByIdList: mainFunctions.updateModmailThreadByIdList,
+  updateModmailThreadByQuery: mainFunctions.updateModmailThreadByQuery,
+  deleteModmailThreadById: mainFunctions.deleteModmailThreadById,
+  deleteModmailThreadByQuery: mainFunctions.deleteModmailThreadByQuery,
+  // ModmailMessage Db Object
+  dbGetModmailmessage: mainFunctions.dbGetModmailmessage,
+  dbCreateModmailmessage: mainFunctions.dbCreateModmailmessage,
+  dbUpdateModmailmessage: mainFunctions.dbUpdateModmailmessage,
+  dbDeleteModmailmessage: mainFunctions.dbDeleteModmailmessage,
+  dbListModmailmessages: mainFunctions.dbListModmailmessages,
+  createModmailMessage: mainFunctions.createModmailMessage,
+  getIdListOfModmailMessageByField:
+    mainFunctions.getIdListOfModmailMessageByField,
+  getModmailMessageById: mainFunctions.getModmailMessageById,
+  getModmailMessageAggById: mainFunctions.getModmailMessageAggById,
+  getModmailMessageListByQuery: mainFunctions.getModmailMessageListByQuery,
+  getModmailMessageStatsByQuery: mainFunctions.getModmailMessageStatsByQuery,
+  getModmailMessageByQuery: mainFunctions.getModmailMessageByQuery,
+  updateModmailMessageById: mainFunctions.updateModmailMessageById,
+  updateModmailMessageByIdList: mainFunctions.updateModmailMessageByIdList,
+  updateModmailMessageByQuery: mainFunctions.updateModmailMessageByQuery,
+  deleteModmailMessageById: mainFunctions.deleteModmailMessageById,
+  deleteModmailMessageByQuery: mainFunctions.deleteModmailMessageByQuery,
+};

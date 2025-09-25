@@ -1,0 +1,476 @@
+{
+  "info": {
+    "name": "redditclone-localization-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getLocale",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//locales/:localeId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "locales",
+            ":localeId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createLocale",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"localeCode\": \"String\",\n  \"displayName\": \"String\",\n  \"direction\": \"Enum\",\n  \"enabled\": \"Boolean\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//locales",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "locales"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateLocale",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"displayName\": \"String\",\n  \"direction\": \"Enum\",\n  \"enabled\": \"Boolean\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//locales/:localeId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "locales",
+            ":localeId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteLocale",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//locales/:localeId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "locales",
+            ":localeId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listLocales",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//locales",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "locales"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLocalizationKey",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//localizationkeys/:localizationKeyId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationkeys",
+            ":localizationKeyId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createLocalizationKey",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"uiKey\": \"String\",\n  \"description\": \"Text\",\n  \"defaultValue\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//localizationkeys",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationkeys"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateLocalizationKey",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"description\": \"Text\",\n  \"defaultValue\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//localizationkeys/:localizationKeyId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationkeys",
+            ":localizationKeyId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteLocalizationKey",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//localizationkeys/:localizationKeyId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationkeys",
+            ":localizationKeyId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listLocalizationKeys",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//localizationkeys",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationkeys"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getLocalizationString",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//localizationstrings/:localizationStringId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationstrings",
+            ":localizationStringId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createLocalizationString",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"keyId\": \"ID\",\n  \"localeId\": \"ID\",\n  \"value\": \"Text\",\n  \"status\": \"Enum\",\n  \"reviewNotes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//localizationstrings",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationstrings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateLocalizationString",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"value\": \"Text\",\n  \"status\": \"Enum\",\n  \"reviewNotes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//localizationstrings/:localizationStringId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationstrings",
+            ":localizationStringId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteLocalizationString",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//localizationstrings/:localizationStringId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationstrings",
+            ":localizationStringId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listLocalizationStrings",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//localizationstrings",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "localizationstrings"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

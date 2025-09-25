@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #eaeaea;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .download:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <script>
+    async function logout() {
+      try {
+        const response = await fetch("/logout", {
+          method: "POST",
+          credentials: "include", // to send cookies if necessary
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          window.location.href = "/login"; // redirect to login or home
+        } else {
+          alert("Logout failed");
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1>Welcome to redditclone-community Service</h1>
+      <p>
+        Manages user-created communities, memberships, rules, settings,
+        appearance, trending, and automod configuration.
+      </p>
+      <h2>Available Routes</h2>
+      <ul>
+        <li><strong>getCommunity</strong> => GET /communities/:communityId</li>
+
+        <li><strong>createCommunity</strong> => POST /communities</li>
+
+        <li>
+          <strong>updateCommunity</strong> => PATCH /communities/:communityId
+        </li>
+
+        <li>
+          <strong>deleteCommunity</strong> => DELETE /communities/:communityId
+        </li>
+
+        <li><strong>listCommunities</strong> => GET /communities</li>
+
+        <li>
+          <strong>getCommunityMember</strong> => GET
+          /communitymembers/:communityMemberId
+        </li>
+
+        <li>
+          <strong>createCommunityMember</strong> => POST /communitymembers
+        </li>
+
+        <li>
+          <strong>updateCommunityMember</strong> => PATCH
+          /communitymembers/:communityMemberId
+        </li>
+
+        <li>
+          <strong>deleteCommunityMember</strong> => DELETE
+          /communitymembers/:communityMemberId
+        </li>
+
+        <li><strong>listCommunityMembers</strong> => GET /communitymembers</li>
+
+        <li>
+          <strong>getCommunityRule</strong> => GET
+          /communityrules/:communityRuleId
+        </li>
+
+        <li><strong>createCommunityRule</strong> => POST /communityrules</li>
+
+        <li>
+          <strong>updateCommunityRule</strong> => PATCH
+          /communityrules/:communityRuleId
+        </li>
+
+        <li>
+          <strong>deleteCommunityRule</strong> => DELETE
+          /communityrules/:communityRuleId
+        </li>
+
+        <li><strong>listCommunityRules</strong> => GET /communityrules</li>
+
+        <li>
+          <strong>getCommunityPinned</strong> => GET
+          /communitypinneds/:communityPinnedId
+        </li>
+
+        <li>
+          <strong>createCommunityPinned</strong> => POST /communitypinneds
+        </li>
+
+        <li>
+          <strong>updateCommunityPinned</strong> => PATCH
+          /communitypinneds/:communityPinnedId
+        </li>
+
+        <li>
+          <strong>deleteCommunityPinned</strong> => DELETE
+          /communitypinneds/:communityPinnedId
+        </li>
+
+        <li><strong>listCommunityPinned</strong> => GET /communitypinned</li>
+
+        <li>
+          <strong>getCommunityAutomodSetting</strong> => GET
+          /communityautomodsettings/:communityAutomodSettingId
+        </li>
+
+        <li>
+          <strong>createCommunityAutomodSetting</strong> => POST
+          /communityautomodsettings
+        </li>
+
+        <li>
+          <strong>updateCommunityAutomodSetting</strong> => PATCH
+          /communityautomodsettings/:communityAutomodSettingId
+        </li>
+
+        <li>
+          <strong>deleteCommunityAutomodSetting</strong> => DELETE
+          /communityautomodsettings/:communityAutomodSettingId
+        </li>
+
+        <li>
+          <strong>listCommunityAutomodSettings</strong> => GET
+          /communityautomodsettings
+        </li>
+      </ul>
+      <a class="download" href="/swagger">Go to Swagger Page</a>
+      <br />
+      <a class="download" href="/getPostmanCollection" download
+        >Download Postman Collection</a
+      >
+      $loginInfo
+    </div>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #eaeaea;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .download:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <script>
+    async function logout() {
+      try {
+        const response = await fetch("/logout", {
+          method: "POST",
+          credentials: "include", // to send cookies if necessary
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          window.location.href = "/login"; // redirect to login or home
+        } else {
+          alert("Logout failed");
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1>Welcome to redditclone-content Service</h1>
+      <p>
+        Manages creation, editing, and deletion of posts and comments
+        (multi-format), threaded commenting, voting, NSFW/filtering, feeds,
+        discovery, caching, and associations with media uploads.
+      </p>
+      <h2>Available Routes</h2>
+      <ul>
+        <li><strong>getPost</strong> => GET /posts/:postId</li>
+
+        <li><strong>createPost</strong> => POST /posts</li>
+
+        <li><strong>updatePost</strong> => PATCH /posts/:postId</li>
+
+        <li><strong>deletePost</strong> => DELETE /posts/:postId</li>
+
+        <li><strong>listPosts</strong> => GET /posts</li>
+
+        <li><strong>getComment</strong> => GET /comments/:commentId</li>
+
+        <li><strong>createComment</strong> => POST /comments</li>
+
+        <li><strong>updateComment</strong> => PATCH /comments/:commentId</li>
+
+        <li><strong>deleteComment</strong> => DELETE /comments/:commentId</li>
+
+        <li><strong>listComments</strong> => GET /comments</li>
+
+        <li><strong>getVote</strong> => GET /votes/:voteId</li>
+
+        <li><strong>createVote</strong> => POST /votes</li>
+
+        <li><strong>updateVote</strong> => PATCH /votes/:voteId</li>
+
+        <li><strong>deleteVote</strong> => DELETE /votes/:voteId</li>
+
+        <li><strong>listVotes</strong> => GET /votes</li>
+
+        <li>
+          <strong>getPollOption</strong> => GET /polloptions/:pollOptionId
+        </li>
+
+        <li><strong>createPollOption</strong> => POST /polloptions</li>
+
+        <li>
+          <strong>updatePollOption</strong> => PATCH /polloptions/:pollOptionId
+        </li>
+
+        <li>
+          <strong>deletePollOption</strong> => DELETE /polloptions/:pollOptionId
+        </li>
+
+        <li><strong>listPollOptions</strong> => GET /polloptions</li>
+
+        <li><strong>getPostMedia</strong> => GET /postmedias/:postMediaId</li>
+
+        <li><strong>addPostMedia</strong> => POST /addpostmedia</li>
+
+        <li>
+          <strong>updatePostMedia</strong> => PATCH /postmedias/:postMediaId
+        </li>
+
+        <li>
+          <strong>deletePostMedia</strong> => DELETE /postmedias/:postMediaId
+        </li>
+
+        <li><strong>listPostMedia</strong> => GET /postmedia</li>
+      </ul>
+      <a class="download" href="/swagger">Go to Swagger Page</a>
+      <br />
+      <a class="download" href="/getPostmanCollection" download
+        >Download Postman Collection</a
+      >
+      $loginInfo
+    </div>
+  </body>
+</html>

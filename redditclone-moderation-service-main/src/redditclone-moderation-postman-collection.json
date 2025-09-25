@@ -1,0 +1,788 @@
+{
+  "info": {
+    "name": "redditclone-moderation-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getModerationAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//moderationactions/:moderationActionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationactions",
+            ":moderationActionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createModerationAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"communityId\": \"ID\",\n  \"targetType\": \"Enum\",\n  \"targetId\": \"ID\",\n  \"actionType\": \"Enum\",\n  \"performedByRole\": \"Enum\",\n  \"reason\": \"String\",\n  \"notes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//moderationactions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationactions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateModerationAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reason\": \"String\",\n  \"notes\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//moderationactions/:moderationActionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationactions",
+            ":moderationActionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteModerationAction",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//moderationactions/:moderationActionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationactions",
+            ":moderationActionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listModerationActions",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//moderationactions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationactions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAutomodEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//automodevents/:automodEventId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "automodevents",
+            ":automodEventId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createAutomodEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"communityId\": \"ID\",\n  \"targetType\": \"Enum\",\n  \"targetId\": \"ID\",\n  \"automodType\": \"Enum\",\n  \"ruleId\": \"ID\",\n  \"performedByAutomod\": \"Boolean\",\n  \"triggerDetails\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//automodevents",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "automodevents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateAutomodEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"triggerDetails\": \"Object\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//automodevents/:automodEventId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "automodevents",
+            ":automodEventId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteAutomodEvent",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//automodevents/:automodEventId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "automodevents",
+            ":automodEventId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listAutomodEvents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//automodevents",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "automodevents"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getModerationAuditLog",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//moderationauditlogs/:moderationAuditLogId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationauditlogs",
+            ":moderationAuditLogId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createModerationAuditLog",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"logEntryType\": \"Enum\",\n  \"communityId\": \"ID\",\n  \"entityType\": \"Enum\",\n  \"entityId\": \"ID\",\n  \"actionUserId\": \"ID\",\n  \"linkedModerationActionId\": \"ID\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//moderationauditlogs",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationauditlogs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateModerationAuditLog",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//moderationauditlogs/:moderationAuditLogId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationauditlogs",
+            ":moderationAuditLogId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteModerationAuditLog",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//moderationauditlogs/:moderationAuditLogId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationauditlogs",
+            ":moderationAuditLogId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listModerationAuditLogs",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//moderationauditlogs",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "moderationauditlogs"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getModmailThread",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//modmailthreads/:modmailThreadId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailthreads",
+            ":modmailThreadId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createModmailThread",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"communityId\": \"ID\",\n  \"subject\": \"String\",\n  \"status\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//modmailthreads",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailthreads"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateModmailThread",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"subject\": \"String\",\n  \"status\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//modmailthreads/:modmailThreadId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailthreads",
+            ":modmailThreadId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteModmailThread",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//modmailthreads/:modmailThreadId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailthreads",
+            ":modmailThreadId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listModmailThreads",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//modmailthreads",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailthreads"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getModmailMessage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//modmailmessages/:modmailMessageId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailmessages",
+            ":modmailMessageId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createModmailMessage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"threadId\": \"ID\",\n  \"messageBody\": \"Text\",\n  \"messageType\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//modmailmessages",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailmessages"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateModmailMessage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//modmailmessages/:modmailMessageId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailmessages",
+            ":modmailMessageId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteModmailMessage",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//modmailmessages/:modmailMessageId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailmessages",
+            ":modmailMessageId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listModmailMessages",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//modmailmessages",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "modmailmessages"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

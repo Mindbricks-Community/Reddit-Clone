@@ -1,0 +1,788 @@
+{
+  "info": {
+    "name": "redditclone-content-service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getPost",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//posts/:postId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "posts",
+            ":postId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createPost",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"communityId\": \"ID\",\n  \"title\": \"String\",\n  \"bodyText\": \"Text\",\n  \"externalUrl\": \"String\",\n  \"postType\": \"Enum\",\n  \"status\": \"Enum\",\n  \"isNsfw\": \"Boolean\",\n  \"upVotes\": \"Integer\",\n  \"downVotes\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//posts",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatePost",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"String\",\n  \"bodyText\": \"Text\",\n  \"externalUrl\": \"String\",\n  \"postType\": \"Enum\",\n  \"status\": \"Enum\",\n  \"isNsfw\": \"Boolean\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//posts/:postId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "posts",
+            ":postId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deletePost",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//posts/:postId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "posts",
+            ":postId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listPosts",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//posts",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getComment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//comments/:commentId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "comments",
+            ":commentId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createComment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"postId\": \"ID\",\n  \"parentCommentId\": \"ID\",\n  \"threadPath\": \"String\",\n  \"bodyText\": \"Text\",\n  \"status\": \"Enum\",\n  \"isNsfw\": \"Boolean\",\n  \"upVotes\": \"Integer\",\n  \"downVotes\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//comments",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "comments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateComment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"parentCommentId\": \"ID\",\n  \"threadPath\": \"String\",\n  \"bodyText\": \"Text\",\n  \"status\": \"Enum\",\n  \"isNsfw\": \"Boolean\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//comments/:commentId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "comments",
+            ":commentId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteComment",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//comments/:commentId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "comments",
+            ":commentId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listComments",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//comments",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "comments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getVote",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//votes/:voteId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "votes",
+            ":voteId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createVote",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"postId\": \"ID\",\n  \"commentId\": \"ID\",\n  \"voteType\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//votes",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "votes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateVote",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"voteType\": \"Enum\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//votes/:voteId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "votes",
+            ":voteId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteVote",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//votes/:voteId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "votes",
+            ":voteId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listVotes",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//votes",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "votes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getPollOption",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//polloptions/:pollOptionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "polloptions",
+            ":pollOptionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createPollOption",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"postId\": \"ID\",\n  \"optionIndex\": \"Integer\",\n  \"optionText\": \"String\",\n  \"voteCount\": \"Integer\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//polloptions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "polloptions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatePollOption",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"optionIndex\": \"Integer\",\n  \"optionText\": \"String\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//polloptions/:pollOptionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "polloptions",
+            ":pollOptionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deletePollOption",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//polloptions/:pollOptionId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "polloptions",
+            ":pollOptionId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listPollOptions",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//polloptions",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "polloptions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getPostMedia",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//postmedias/:postMediaId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "postmedias",
+            ":postMediaId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addPostMedia",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mediaObjectId\": \"ID\",\n  \"postId\": \"ID\",\n  \"commentId\": \"ID\",\n  \"mediaIndex\": \"Integer\",\n  \"caption\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//addpostmedia",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "addpostmedia"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updatePostMedia",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"mediaIndex\": \"Integer\",\n  \"caption\": \"Text\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{serviceUrl}}//postmedias/:postMediaId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "postmedias",
+            ":postMediaId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deletePostMedia",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//postmedias/:postMediaId",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "postmedias",
+            ":postMediaId"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listPostMedia",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "ExampleValue",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{serviceUrl}}//postmedia",
+          "host": [
+            "{{serviceUrl}}"
+          ],
+          "path": [
+            "postmedia"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

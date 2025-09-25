@@ -1,0 +1,77 @@
+
+syntax = "proto3";
+
+package adminOps;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message adminUserAction {
+    string id = 1;
+    string adminId = 2;
+    int32 targetType = 3;
+    string targetId = 4;
+    int32 actionType = 5;
+    string reason = 6;
+    string notes = 7;
+}
+message gdprExportRequest {
+    string id = 1;
+    string userId = 2;
+    string requestedByAdminId = 3;
+    int32 status = 4;
+    string exportUrl = 5;
+    string errorMsg = 6;
+}
+message gdprDeleteRequest {
+    string id = 1;
+    string userId = 2;
+    string requestedByAdminId = 3;
+    int32 status = 4;
+    string errorMsg = 5;
+}
+message compliancePolicy {
+    string id = 1;
+    int32 minAge = 2;
+    bool gdprExportEnabled = 3;
+    bool gdprDeleteEnabled = 4;
+}
+message globalUserRestriction {
+    string id = 1;
+    string userId = 2;
+    int32 restrictionType = 3;
+    int32 status = 4;
+    google.protobuf.Timestamp startDate = 5;
+    google.protobuf.Timestamp endDate = 6;
+    string reason = 7;
+    string adminId = 8;
+}
+
+
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service adminOpsService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Service</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #eaeaea;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .download {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .download:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <script>
+    async function logout() {
+      try {
+        const response = await fetch("/logout", {
+          method: "POST",
+          credentials: "include", // to send cookies if necessary
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (response.ok) {
+          window.location.href = "/login"; // redirect to login or home
+        } else {
+          alert("Logout failed");
+        }
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+  </script>
+  <body>
+    <div class="container">
+      <h1>Welcome to redditclone-abuse Service</h1>
+      <p>
+        Handles abuse and anti-spam workflows: collects and triages reports,
+        enforces heuristics/rate limits, tracks flags on users/content, manages
+        abuse investigations. Integrates with moderation/adminOps/content for
+        platform health and safety.
+      </p>
+      <h2>Available Routes</h2>
+      <ul>
+        <li>
+          <strong>getAbuseReport</strong> => GET /abusereports/:abuseReportId
+        </li>
+
+        <li><strong>createAbuseReport</strong> => POST /abusereports</li>
+
+        <li>
+          <strong>updateAbuseReport</strong> => PATCH
+          /abusereports/:abuseReportId
+        </li>
+
+        <li>
+          <strong>deleteAbuseReport</strong> => DELETE
+          /abusereports/:abuseReportId
+        </li>
+
+        <li><strong>listAbuseReports</strong> => GET /abusereports</li>
+
+        <li><strong>getAbuseFlag</strong> => GET /abuseflags/:abuseFlagId</li>
+
+        <li><strong>createAbuseFlag</strong> => POST /abuseflags</li>
+
+        <li>
+          <strong>updateAbuseFlag</strong> => PATCH /abuseflags/:abuseFlagId
+        </li>
+
+        <li>
+          <strong>deleteAbuseFlag</strong> => DELETE /abuseflags/:abuseFlagId
+        </li>
+
+        <li><strong>listAbuseFlags</strong> => GET /abuseflags</li>
+
+        <li>
+          <strong>getAbuseHeuristicTrigger</strong> => GET
+          /abuseheuristictriggers/:abuseHeuristicTriggerId
+        </li>
+
+        <li>
+          <strong>createAbuseHeuristicTrigger</strong> => POST
+          /abuseheuristictriggers
+        </li>
+
+        <li>
+          <strong>updateAbuseHeuristicTrigger</strong> => PATCH
+          /abuseheuristictriggers/:abuseHeuristicTriggerId
+        </li>
+
+        <li>
+          <strong>deleteAbuseHeuristicTrigger</strong> => DELETE
+          /abuseheuristictriggers/:abuseHeuristicTriggerId
+        </li>
+
+        <li>
+          <strong>listAbuseHeuristicTriggers</strong> => GET
+          /abuseheuristictriggers
+        </li>
+
+        <li>
+          <strong>getAbuseInvestigation</strong> => GET
+          /abuseinvestigations/:abuseInvestigationId
+        </li>
+
+        <li>
+          <strong>createAbuseInvestigation</strong> => POST /abuseinvestigations
+        </li>
+
+        <li>
+          <strong>updateAbuseInvestigation</strong> => PATCH
+          /abuseinvestigations/:abuseInvestigationId
+        </li>
+
+        <li>
+          <strong>deleteAbuseInvestigation</strong> => DELETE
+          /abuseinvestigations/:abuseInvestigationId
+        </li>
+
+        <li>
+          <strong>listAbuseInvestigations</strong> => GET /abuseinvestigations
+        </li>
+      </ul>
+      <a class="download" href="/swagger">Go to Swagger Page</a>
+      <br />
+      <a class="download" href="/getPostmanCollection" download
+        >Download Postman Collection</a
+      >
+      $loginInfo
+    </div>
+  </body>
+</html>

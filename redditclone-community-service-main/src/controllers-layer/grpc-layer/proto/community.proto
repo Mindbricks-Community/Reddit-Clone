@@ -1,0 +1,76 @@
+
+syntax = "proto3";
+
+package community;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message community {
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+    string description = 4;
+    string creatorId = 5;
+    string bannerUrl = 6;
+    string avatarUrl = 7;
+    string colorScheme = 8;
+    int32 privacyLevel = 9;
+    bool isNsfw = 10;
+    repeated int32 allowedPostTypes = 11;
+}
+message communityMember {
+    string id = 1;
+    string communityId = 2;
+    string userId = 3;
+    int32 role = 4;
+    int32 status = 5;
+}
+message communityRule {
+    string id = 1;
+    string communityId = 2;
+    string shortName = 3;
+    string description = 4;
+    int32 orderIndex = 5;
+}
+message communityPinned {
+    string id = 1;
+    string communityId = 2;
+    int32 targetType = 3;
+    string targetId = 4;
+    int32 orderIndex = 5;
+}
+message communityAutomodSetting {
+    string id = 1;
+    string communityId = 2;
+    google.protobuf.Struct rulesData = 3;
+}
+
+
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service communityService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}

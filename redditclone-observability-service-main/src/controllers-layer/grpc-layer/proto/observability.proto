@@ -1,0 +1,87 @@
+
+syntax = "proto3";
+
+package observability;
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+message systemMetric {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    string serviceName = 3;
+    string host = 4;
+    string metricName = 5;
+    double metricValue = 6;
+    string unit = 7;
+    google.protobuf.Struct tags = 8;
+}
+message errorLog {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    string serviceName = 3;
+    string errorType = 4;
+    string message = 5;
+    int32 severity = 6;
+    string stackTrace = 7;
+    google.protobuf.Struct context = 8;
+    string userId = 9;
+}
+message sloEvent {
+    string id = 1;
+    google.protobuf.Timestamp eventTime = 2;
+    string serviceName = 3;
+    int32 eventType = 4;
+    int32 status = 5;
+    string notes = 6;
+}
+message auditLog {
+    string id = 1;
+    google.protobuf.Timestamp timestamp = 2;
+    string eventType = 3;
+    string userId = 4;
+    string message = 5;
+    string targetType = 6;
+    string targetId = 7;
+    google.protobuf.Struct details = 8;
+}
+message alert {
+    string id = 1;
+    string title = 2;
+    repeated string affectedServices = 3;
+    int32 status = 4;
+    int32 severity = 5;
+    repeated string sloEventIds = 6;
+    repeated string errorLogIds = 7;
+    string resolvedByUserId = 8;
+    string notes = 9;
+}
+
+
+
+
+
+
+
+
+message VoidRequest {}
+
+message CurrentUserReply {
+    string userId = 1;
+    string sessionId = 2;
+    string fullname = 3;
+    string email = 4;
+    string roleId = 5;
+    string avatar = 6;
+    bool emailVerified = 7;
+            repeated string userGroupNames = 8;
+    repeated string userGroupIdList = 9;string accessToken = 10;
+}
+
+message HelloMessageReply {
+    string hello = 1;
+}
+
+service observabilityService {
+    rpc currentUser(VoidRequest) returns (CurrentUserReply);
+    rpc helloMessage(VoidRequest) returns (HelloMessageReply);
+}
